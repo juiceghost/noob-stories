@@ -1,5 +1,11 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import Navbar from './Navbar';
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch
+} from "react-router-dom";
 
 const MyButton = styled.button`
   padding: 4em;
@@ -17,10 +23,26 @@ function App() {
   const myName = "Frank";
   const buttonText = "KLICKA INTE";
   return (
-    <div>
-      <h1>Hello {text}</h1>
-      <MyComponent handleChange={handleChange} text={text} setText={setText} buttonText={buttonText} myName={myName} />
-    </div>);
+    <Router>
+      <div>
+        <Navbar />
+        <Switch>
+          <Route path="/about">
+            <p>About</p>
+            <MyComponent handleChange={handleChange} text={text} setText={setText} buttonText={buttonText} myName={myName} />
+          </Route>
+          <Route path="/portfolio">
+            <p>Portoflio</p>
+          </Route>
+          <Route path="/">
+            <p>Home</p>
+          </Route>
+        </Switch>
+        <h1>Hello {text}</h1>
+
+      </div>
+    </Router>
+  );
 }
 
 
