@@ -8,12 +8,14 @@ const StyledNav = styled.nav`
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
+    grid-area: top;
 `;
 
 const StyledLink = styled(Link)`
-    color: white;
-    background-color: #f1356d;
-    border-radius: 8px;
+    color: black;
+    /* background-color: #f1356d; */
+    /* border-radius: 8px; */
 `;
 const Navbar = () => {
     return (
