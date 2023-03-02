@@ -20,6 +20,10 @@ const LogoContainer = styled.div`
   grid-area: logo;
 `;
 
+const StyledImg = styled.img`
+  width: 100%;
+`;
+
 const MainContainer = styled.div`
   grid-area: main;
 `;
@@ -34,14 +38,23 @@ const GridContainer = styled.div`
   "main main main main main"
   "main main main main main"
   "footer footer footer footer footer";
-`
+  min-height: 100vh;
+`;
+
+const StyledFooter = styled.footer`
+  grid-area: footer;
+  /* display: flex; */
+  align-self: center;
+`;
 
 function App() {
 
   return (
     <Router>
       <GridContainer>
-        <LogoContainer><img style={{ width: "100%" }} src={logo} alt="Logo" /></LogoContainer>
+        <LogoContainer>
+          <StyledImg src={logo} alt="Logo" />
+        </LogoContainer>
         <Navbar />
         <MainContainer>
           <Switch>
@@ -57,10 +70,22 @@ function App() {
           </Switch>
           <h1>Hello Krille</h1>
         </MainContainer>
+        <StyledFooter>
+          <p>(C) 2023 Krille da man</p>
+        </StyledFooter>
       </GridContainer>
     </Router>
   );
 }
+
+// Läxa tills 7/3:
+// Skapa din personliga footer i samråd med andra på Discord.
+// titta på exempel på andra portföljer
+// Du kan t.ex ha med linkedin-ikon och github-ikon figma-ikon?
+// Tips att researcha: "fontawesome"
+// Obs. Discord är ICKE frivilligt, men ni behöver inte göra hela läxan på discord
+// Om du blir klar med detta, gör samma sak med Navbar
+// Pusha ditt projek till din github, skicka länk till mig.
 
 
 export default App;

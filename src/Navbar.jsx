@@ -4,7 +4,7 @@ import {
     Link
 } from "react-router-dom";
 
-const StyledNav = styled.nav`
+export const StyledNav = styled.nav`
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -12,7 +12,7 @@ const StyledNav = styled.nav`
     grid-area: top;
 `;
 
-const StyledLink = styled(Link)`
+export const StyledLink = styled(Link)`
     color: black;
     /* background-color: #f1356d; */
     /* border-radius: 8px; */
