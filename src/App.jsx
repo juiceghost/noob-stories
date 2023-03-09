@@ -52,7 +52,6 @@ const StyledFooter = styled.footer`
 `;
 
 function App() {
-
   return (
     <Router>
       <GridContainer>
@@ -75,7 +74,6 @@ function App() {
               <Home />
             </Route>
           </Switch>
-          <h1>Hello Krille</h1>
         </MainContainer>
         <StyledFooter>
           <p>(C) 2023 Krille da man</p>
