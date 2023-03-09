@@ -7,6 +7,10 @@ import {
 } from "react-router-dom";
 
 import Navbar from './Navbar';
+import Contact from './pages/Contact';
+import About from './pages/About';
+import Home from './pages/Home';
+import Portfolio from './pages/Portfolio';
 
 import logo from './assets/logo.png';
 
@@ -58,14 +62,17 @@ function App() {
         <Navbar />
         <MainContainer>
           <Switch>
+            <Route path="/contact">
+              <Contact />
+            </Route>
             <Route path="/about">
-              <p>About</p>
+              <About />
             </Route>
             <Route path="/portfolio">
-              <p>Portfolio</p>
+              <Portfolio />
             </Route>
             <Route path="/">
-              <p>Home</p>
+              <Home />
             </Route>
           </Switch>
           <h1>Hello Krille</h1>
