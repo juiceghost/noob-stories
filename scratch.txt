@@ -1,0 +1,6 @@
+Läxa till nästa gång, gör så många punkter du hinner med, dock är 1:an obligatorisk samt att ni jobbar i grupp är extra obligatoriskt.
+"Fixa till navbaren" dvs ordna med styling, kanske fixa en bättre logga, se till att länkarna går till rätt undersidor. Gör den responsiv dvs "hamburgare"
+I Main ska ni lägga till innehåll, detta innehåll ska bestå av text och en bild (t.ex foto på er eller ett djur). Innehållet ska ligga sida vid sida.
+ Gör detta responsivt, dvs vid smala skärmstorlekar ska innehållet istället ligga under varandra (inte sida vid sida). Hitta lämplig breakpoints själva
+??
+Profit.
