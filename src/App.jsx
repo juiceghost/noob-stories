@@ -30,6 +30,9 @@ const StyledImg = styled.img`
 
 const MainContainer = styled.div`
   grid-area: main;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
 
 const GridContainer = styled.div`
@@ -51,6 +54,14 @@ const StyledFooter = styled.footer`
   align-self: center;
 `;
 
+
+let footerData = [
+  {
+    to: "https://www.github.com/juiceghost",
+    icon: logo
+  },
+  {}
+]
 function App() {
   return (
     <Router>
@@ -77,6 +88,9 @@ function App() {
         </MainContainer>
         <StyledFooter>
           <p>(C) 2023 Krille da man</p>
+          <p>Allmänt trevlig grabb</p>
+          <p>Kodar ibland</p>
+          <p>Maila mig</p>
         </StyledFooter>
       </GridContainer>
     </Router>
