@@ -31,7 +31,8 @@ const StyledImg = styled.img`
 const MainContainer = styled.div`
   grid-area: main;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
   align-items: center;
 `;
 
