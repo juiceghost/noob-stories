@@ -19,6 +19,12 @@ export const Hamburger = styled.div`
     position: absolute;
     right: 2em;
     top: 2em;
+    z-index: 1;
+
+    @media screen and (min-width: 901px) {
+        display: none;
+    }
+
     & { 
         label {
         display: block;
@@ -43,13 +49,17 @@ export const Hamburger = styled.div`
     `;
 
 export const StyledResMenu = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
     position: absolute;
     top: 0;
     right: 0;
-    background-color: red;
+    background-color: white;
     height: 500px;
     width: 300px;
-    transform: translateX(300px);
+    /* transform: translateX(300px); */
 `;
 
 export const StyledLink = styled(Link)`
@@ -105,16 +115,16 @@ const Navbar = () => {
             <StyledNav>
                 {links.map(link => <StyledLink to={link.to} key={link.id}>{link.text}</StyledLink>)}
             </StyledNav>
-            <Hamburger>
-                <label for="hamburger">
+            <Hamburger onClick={() => setIsOpen(!isOpen)}>
+                <label>
                     <span></span>
                     <span></span>
                     <span></span>
                 </label>
             </Hamburger>
-            <StyledResMenu>
-
-            </StyledResMenu>
+            {isOpen && <StyledResMenu>
+                {links.map(link => <StyledLink to={link.to} key={link.id}>{link.text}</StyledLink>)}
+            </StyledResMenu>}
         </>
     );
 }
