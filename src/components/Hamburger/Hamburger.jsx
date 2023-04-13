@@ -15,6 +15,8 @@ const links = [
         to: "/contact",
         text: "Contact"
     }]
+
+    Design borrowed from // https://codepen.io/erikterwan/pen/EVzeRP Inspo for Hamburger
 */
 function Hamburger(props) {
     const [isOpen, setIsOpen] = useState(false);
