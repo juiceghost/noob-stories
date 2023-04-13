@@ -4,6 +4,8 @@ import {
     Link
 } from "react-router-dom";
 
+
+// https://codepen.io/erikterwan/pen/EVzeRP Inspo for Hamburger
 export const StyledNav = styled.nav`
     display: flex;
     flex-direction: row;
@@ -41,9 +43,13 @@ export const Hamburger = styled.div`
             width: 100%;
             background: #000;
             transition: 0.5s;
-            &:nth-child(1) { top: 12px; }
+            transform-origin: 4px 0px;
+            transform: rotate(${({ isOpen }) => isOpen ? '45deg' : ''}) translate(${({ isOpen }) => isOpen ? '-2px, -1px' : ''});
+
+            /* transform: rotate(45deg) translate(-2px, -1px); */
+            &:nth-child(1) { top: 12px;  transform-origin: 0% 0%; }
             &:nth-child(2) { top: 24px; }
-            &:nth-child(3) { top: 36px; }
+            &:nth-child(3) { top: 36px; transform-origin: 0% 100%; }
         }
     }
     `;
@@ -59,11 +65,16 @@ export const StyledResMenu = styled.div`
     background-color: white;
     height: 500px;
     width: 300px;
+    transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+    transform: translateX(${({ isOpen }) => isOpen ? '0' : '300px'});
     /* transform: translateX(300px); */
 `;
 
 export const StyledLink = styled(Link)`
     color: black;
+    font-size: x-large;
+    text-decoration: none;
+    margin-left: 1em;
     /* background-color: #f1356d; */
     /* border-radius: 8px; */
 `;
@@ -115,16 +126,16 @@ const Navbar = () => {
             <StyledNav>
                 {links.map(link => <StyledLink to={link.to} key={link.id}>{link.text}</StyledLink>)}
             </StyledNav>
-            <Hamburger onClick={() => setIsOpen(!isOpen)}>
+            <Hamburger onClick={() => setIsOpen(!isOpen)} isOpen={isOpen}>
                 <label>
                     <span></span>
                     <span></span>
                     <span></span>
                 </label>
             </Hamburger>
-            {isOpen && <StyledResMenu>
+            <StyledResMenu isOpen={isOpen}>
                 {links.map(link => <StyledLink to={link.to} key={link.id}>{link.text}</StyledLink>)}
-            </StyledResMenu>}
+            </StyledResMenu>
         </>
     );
 }
