@@ -1,8 +1,41 @@
 import React, { useState } from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import {
     Link
 } from "react-router-dom";
+
+
+const normal = css`
+    transform: rotate(0deg);
+    &:nth-child(1) { top: 12px;  transform-origin: 0% 0%; }
+    &:nth-child(2) { top: 24px; }
+    &:nth-child(3) { top: 36px; transform-origin: 0% 100%; }
+    `;
+
+const crossmark = css`
+
+
+            &:nth-child(1) { 
+                top: 12px;  
+                transform-origin: 0% 0%; 
+                transform: rotate(45deg) translate(-2px, -1px);
+
+            }
+            &:nth-child(2) { 
+                top: 24px; 
+                opacity: 0;
+                transform: rotate(0deg) scale(0.2, 0.2);
+            }
+            &:nth-child(3) { 
+                top: 36px; 
+                transform-origin: 0% 100%; 
+                transform: rotate(-45deg) translate(0, -1px);
+                }
+`;
+
+const Box = styled.div`
+  ${({ isDark }) => (isDark ? light : dark)}
+`;
 
 
 // https://codepen.io/erikterwan/pen/EVzeRP Inspo for Hamburger
@@ -41,15 +74,13 @@ export const Hamburger = styled.div`
             position: absolute;
             height: 6px;
             width: 100%;
-            background: #000;
-            transition: 0.5s;
+            opacity: 1;
+            background: #232323;
+            transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0), 
+                        opacity 0.55s ease;
             transform-origin: 4px 0px;
-            transform: rotate(${({ isOpen }) => isOpen ? '45deg' : ''}) translate(${({ isOpen }) => isOpen ? '-2px, -1px' : ''});
 
-            /* transform: rotate(45deg) translate(-2px, -1px); */
-            &:nth-child(1) { top: 12px;  transform-origin: 0% 0%; }
-            &:nth-child(2) { top: 24px; }
-            &:nth-child(3) { top: 36px; transform-origin: 0% 100%; }
+            ${({ isOpen }) => (!isOpen ? normal : crossmark)}
         }
     }
     `;
@@ -57,8 +88,8 @@ export const Hamburger = styled.div`
 export const StyledResMenu = styled.div`
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
-    align-items: flex-start;
+    justify-content: flex-start;
+    align-items: flex-end;
     position: absolute;
     top: 0;
     right: 0;
@@ -68,6 +99,16 @@ export const StyledResMenu = styled.div`
     transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
     transform: translateX(${({ isOpen }) => isOpen ? '0' : '300px'});
     /* transform: translateX(300px); */
+    & {
+        a {
+            margin-right: 2em;
+            margin-top: 1em;
+        }
+
+        a:nth-child(1) {
+            margin-top: 4em;
+        }
+    }
 `;
 
 export const StyledLink = styled(Link)`
