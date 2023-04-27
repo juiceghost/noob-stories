@@ -1,8 +1,8 @@
 import React from 'react';
 
 import { CardContainer, StyledCompPic, StyledReactPic, StyledButton, StyledP } from './styles';
-import reactPic from '../../assets/react.jpg';
-import compPic from '../../assets/comp.jpg';
+/* import reactPic from '../../assets/react.jpg';
+import compPic from '../../assets/comp.jpg'; */
 
 function OldCard() {
 

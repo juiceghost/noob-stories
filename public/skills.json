@@ -1,0 +1,18 @@
+[
+    {
+        "upperPic": "comp.jpg",
+        "middlePic": "react.jpg",
+        "headline": "React Portfolio",
+        "description": "Please behold my amazing React portfolio, showcasing my immense skills.",
+        "buttonText": "View more",
+        "buttonLink": "/"
+    },
+    {
+        "upperPic": "comp.jpg",
+        "middlePic": "react.jpg",
+        "headline": "React Portfolio",
+        "description": "Please behold my amazing React portfolio 2, showcasing my immense skills.",
+        "buttonText": "View more",
+        "buttonLink": "/"
+    }
+]
