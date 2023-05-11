@@ -4,18 +4,6 @@ import { CardContainer, StyledCompPic, StyledReactPic, StyledButton, StyledP } f
 /* import reactPic from '../../assets/react.jpg';
 import compPic from '../../assets/comp.jpg'; */
 
-function OldCard() {
-
-    return (
-        <CardContainer>
-            <StyledCompPic src={compPic} alt="Computer" />
-            <StyledReactPic src={reactPic} alt="React" />
-            <h1>React Portfolio</h1>
-            <StyledP>Please behold my amazing React portfolio, showcasing my immense skills.</StyledP>
-            <StyledButton>View more</StyledButton>
-        </CardContainer>
-    )
-}
 
 function Card(props) {
 
@@ -24,8 +12,8 @@ function Card(props) {
             <StyledCompPic src={props.upperPic} alt="Computer" />
             <StyledReactPic src={props.middlePic} alt="React" />
             <h1>{props.headline}</h1>
-            <StyledP>{props.description}</StyledP>
-            <StyledButton>{props.buttonText}</StyledButton>
+            <StyledP>{props.githubDescription ? props.githubDescription : props.description}</StyledP>
+            <a href={props.url}><StyledButton>{props.buttonText}</StyledButton></a>
         </CardContainer>
     )
 }
