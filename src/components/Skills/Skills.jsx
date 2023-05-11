@@ -3,37 +3,16 @@ import axios from 'axios';
 /* import reactPic from '../../assets/react.jpg';
 import compPic from '../../assets/comp.jpg';
  */
-import { useGithubApi } from '../../hooks/useGithubApi';
+import { useFetchData } from '../../hooks/useFetchData';
 import goatPic from '../../assets/goat.jpg';
 import girlPic from '../../assets/girl.jpg';
 
 import Card from '../Card'
 const Skills = () => {
-    console.log("Hej från Skills")
-    const [skillsData, setSkillsData] = useState([]);
-    /* const [githubData, setGithubData] = useState([]); */
-    const [{ githubData, isLoading, isError }] = useGithubApi();
+    //console.log("Hej från Skills")
+    const [{ data: skillsData }] = useFetchData('skills.json');     // Vi måste hämta skillsData in i komponenten
+    const [{ data: githubData }] = useFetchData('https://api.github.com/users/juiceghost/repos'); // Hämta data från Github API
 
-    useEffect(() => {
-        const fetchData = async () => {
-            const result = await axios(
-                'skills.json',
-            );
-            setSkillsData(result.data);
-        };
-        fetchData();
-
-        /* const fetchGHData = async () => {
-            const result = await axios(
-                'https://api.github.com/users/juiceghost/repos',
-            );
-            setGithubData(result.data);
-        };
-        fetchGHData(); */
-
-    }, []);
-
-    // Vi måste hämta skillsData in i komponenten
     function getURL(repoId) {
         // givet ett repoId (ID från github api)
         // returnera html_url:en från GithubData som matchar det id:t
