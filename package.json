@@ -6,7 +6,9 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "deploy": "npm run build && cp dist/index.html dist/200.html && surge ./dist/ krille-stories.surge.sh",
+    "teardown": "surge teardown krille-stories.surge.sh"
   },
   "dependencies": {
     "axios": "^1.3.6",
